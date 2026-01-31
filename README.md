@@ -1,8 +1,11 @@
 # Disk Health Status (PowerShell)
 
-A Windows PowerShell GUI utility that uses **smartctl (smartmontools)** to query SMART data from all physical disks, evaluate SSD/HDD health, display results in a simple WPF popup ordered by Windows drive letter, and write a dated health log to disk.
+A Windows PowerShell GUI utility that uses **smartctl (smartmontools)** to query SMART data from all physical disks, evaluate SSD/HDD health, display results and inform you in a glance in a simple WPF popup ordered by Windows drive letter, and write a dated health log to disk.
 
 ---
+
+## Why?
+* I wanted to task-schedule a pop-up at boot weekly to quickly inform me about my disks health, and could not find anything that had  this function. CrystalDiskInfo is great but I have to either run it continoously or to remember opening it and going through different tabs.
 
 ## Features
 
