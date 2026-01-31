@@ -22,13 +22,38 @@ A Windows PowerShell GUI utility that uses **smartctl (smartmontools)** to query
 
 ## Usage
 
+Download from releases.
+
 Run from an **elevated PowerShell session**:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\DiskHealth.ps1
 ```
 
-Or double‑click if packaged as a signed EXE with embedded `smartctl`.
+Or double‑click  one of the prepackaged exe's (log/nolog) with embedded `smartctl`.
+
+---
+
+## Recommended powershell script to register a weekly check at boot with elevation via Task Scheduler
+
+```powershell
+# Action
+$Action = New-ScheduledTaskAction -Execute "PowerShell.exe" `
+    -Argument "-NoProfile -ExecutionPolicy Bypass -File `"C:\Scripts\DiskHealth\disk_health.ps1`""
+
+# Trigger: Weekly at a specific time (runs even if machine was off)
+$Trigger = New-ScheduledTaskTrigger -Weekly -DaysOfWeek Monday -At 09:00AM
+
+# Run elevated as SYSTEM
+$Principal = New-ScheduledTaskPrincipal -UserId "SYSTEM" -LogonType ServiceAccount -RunLevel Highest
+
+# Register the task
+Register-ScheduledTask -TaskName "DiskHealthWeekly" `
+    -Action $Action `
+    -Trigger $Trigger `
+    -Principal $Principal `
+    -Description "Run Disk Health WPF script weekly at boot"
+```
 
 ---
 
