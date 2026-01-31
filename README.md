@@ -1,6 +1,6 @@
 # Disk Health Status (PowerShell)
 
-A Windows PowerShell GUI utility that uses **smartctl (smartmontools)** to query SMART data from all physical disks, evaluate SSD/HDD health, display results and inform you in a glance in a simple WPF popup ordered by Windows drive letter, and write a dated health log to disk.
+A Windows PowerShell GUI utility that uses **[smartctl (smartmontools)](https://github.com/smartmontools/smartmontools)** to query SMART data from all physical disks, evaluate SSD/HDD health, display results and inform you in a glance in a simple WPF popup ordered by Windows drive letter, and write a dated health log to disk.
 
 ---
 
@@ -61,7 +61,7 @@ Register-ScheduledTask -TaskName "DiskHealthWeekly" `
 
 * Windows 10 / 11
 * PowerShell 5.1 or PowerShell 7+
-* **smartmontools** (smartctl) - https://github.com/smartmontools/smartmontools
+* **[smartmontools (smartctl)](https://github.com/smartmontools/smartmontools)**
 
   * Recommended: system installation at `C:\Program Files\smartmontools\bin\smartctl.exe`
 * Administrator privileges (strongly recommended)
