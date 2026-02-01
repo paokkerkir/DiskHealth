@@ -20,6 +20,13 @@ A Windows PowerShell GUI utility that uses **[smartctl (smartmontools)](https://
 
 ---
 
+## Screenshot
+
+<img width="530" height="380" alt="image" src="https://github.com/user-attachments/assets/fbddc294-568a-4e82-bd56-1f837bf57a71" />
+
+
+---
+
 ## Usage
 
 Download from releases.
